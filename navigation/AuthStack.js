@@ -38,8 +38,16 @@ export default function AuthStack() {
         component={onbording}
         options={{ headerShown: false }}
       />
-      <AppStack.Screen name="Login" component={Login} />
-      <AppStack.Screen name="Signup" component={Signup} />
+      <AppStack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false }}
+      />
+      <AppStack.Screen
+        name="Signup"
+        component={Signup}
+        options={{ headerShown: false }}
+      />
     </AppStack.Navigator>
   );
 }
