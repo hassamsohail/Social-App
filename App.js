@@ -1,42 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import onbording from "./Screens/onbording";
-import Login from "./Screens/Login";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+// import { View, Text } from "react-native";
+// import Provider from "./navigation/Provider";
+import Provider from "./navigation";
+const App = () => {
+  return <Provider />;
+};
 
-const AppStack = createNativeStackNavigator();
-
-export default function App() {
-  const [IsFirstScreenLogin, setIsFirstScreenLogin] = React.useState(null);
-  React.useEffect(() => {
-    AsyncStorage.getItem("alreadyLaunched").then((Value) => {
-      if (Value == null) {
-        AsyncStorage.setItem("alreadyLaunched", "true");
-        setIsFirstScreenLogin(true);
-      } else {
-        setIsFirstScreenLogin(false);
-      }
-    });
-  }, []);
-
-  if (IsFirstScreenLogin == null) {
-    return null;
-  } else if (IsFirstScreenLogin == true) {
-    return (
-      <NavigationContainer>
-        <AppStack.Navigator>
-          <AppStack.Screen
-            name="onbording"
-            component={onbording}
-            options={{ headerShown: false }}
-          />
-          <AppStack.Screen name="Login" component={Login} />
-        </AppStack.Navigator>
-      </NavigationContainer>
-    );
-  } else {
-    return <Login />;
-  }
-}
+export default App;
