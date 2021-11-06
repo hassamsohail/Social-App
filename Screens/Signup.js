@@ -6,6 +6,7 @@ import Socialbtn from "../components/Socialbtn";
 const Signup = ({ navigation }) => {
   const [Email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
+  const [Confirmpassword, setConfirmpassword] = React.useState();
   return (
     <View style={style.container}>
       <Text style={style.text}>Create An Account</Text>
@@ -24,17 +25,36 @@ const Signup = ({ navigation }) => {
         placeholderText={"Password"}
         iconType={"lock"}
       />
+      <FormsInput
+        labelText={Confirmpassword}
+        onChangeText={(userConfirmPassword) =>
+          setConfirmpassword(userConfirmPassword)
+        }
+        placeholderText={"Confirm Password"}
+        iconType={"lock"}
+        secureTextEntry={true}
+      />
       <View style={{ width: "100%" }}>
         <FormButton buttontitle={"Sign up"} onPress={() => alert("hfdcb")} />
       </View>
-      <View>
-        <Text>By register ? you Confirm that you accept our</Text>
-        <TouchableOpacity>
-          <Text>terms of service</Text>
+      <View style={style.textPrivate}>
+        <Text style={style.color_textPrivate}>
+          By register ? you Confirm that you accept our
+        </Text>
+        <TouchableOpacity onPress={() => alert("This Terms of service")}>
+          <Text style={[style.color_textPrivate, { color: "#e88832" }]}>
+            terms of service
+          </Text>
         </TouchableOpacity>
-        <Text>and</Text>
-        <TouchableOpacity>
-          <Text>privacy policy</Text>
+        <Text
+          style={[style.color_textPrivate, { marginLeft: 5, marginRight: 5 }]}
+        >
+          and
+        </Text>
+        <TouchableOpacity onPress={() => alert("This is privacy policy")}>
+          <Text style={[style.color_textPrivate, { color: "#e88832" }]}>
+            privacy policy
+          </Text>
         </TouchableOpacity>
       </View>
       <Socialbtn
@@ -94,7 +114,13 @@ const style = StyleSheet.create({
   color_textPrivate: {
     fontSize: 13,
     fontWeight: "400",
-    fontFamily: "Lato-Regular",
+    // fontFamily: "Lato-Regular",
     color: "grey",
+  },
+  textPrivate: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginVertical: 35,
+    justifyContent: "center",
   },
 });

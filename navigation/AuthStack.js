@@ -1,7 +1,7 @@
 import React from "react";
-
+import { FontAwesome } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import { View } from "react-native";
 import onbording from "../Screens/onbording";
 
 import Login from "../Screens/Login";
@@ -46,7 +46,26 @@ export default function AuthStack() {
       <AppStack.Screen
         name="Signup"
         component={Signup}
-        options={{ headerShown: false }}
+        options={({ navigation }) => ({
+          title: " ",
+          headerStyle: {
+            backgroundColor: "#f9fafd",
+            // shadowColor: "#f9fafd",
+            // elevation: 0,
+          },
+          headerLeft: () => (
+            <View style={{ marginLeft: 5 }}>
+              <FontAwesome.Button
+                name="long-arrow-left"
+                size={25}
+                color="#333"
+                backgroundColor="#f9fafd"
+                onPress={() => navigation.navigate("Login")}
+              />
+            </View>
+            // <FontAwesome name="long-arrow-left" size={24} color="black" />
+          ),
+        })}
       />
     </AppStack.Navigator>
   );
