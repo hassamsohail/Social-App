@@ -41,7 +41,7 @@ const onbording = ({ navigation }) => {
 
   return (
     <Onboarding
-      SkipButtonComponent={Skip}
+      // SkipButtonComponent={Skip}
       NextButtonComponent={Next}
       DoneButtonComponent={Done}
       DotComponent={Dots}
