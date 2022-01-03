@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { View, Text, Button, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -36,6 +38,7 @@ const onbording = ({ navigation }) => {
       <Text style={{ fontSize: 16 }}>Done</Text>
     </TouchableOpacity>
   );
+  //hhwhwe
   return (
     <Onboarding
       SkipButtonComponent={Skip}
