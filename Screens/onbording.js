@@ -38,7 +38,7 @@ const onbording = ({ navigation }) => {
       <Text style={{ fontSize: 16 }}>Done</Text>
     </TouchableOpacity>
   );
-  //hhwhwe
+
   return (
     <Onboarding
       SkipButtonComponent={Skip}
