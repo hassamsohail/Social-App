@@ -6,7 +6,7 @@ const Signup = ({ navigation }) => {
   return (
     <TouchableOpacity>
       <View>
-        <Text>This IS Sign Up screen</Text>
+       <Text> dkkfbkdfkvjdnkvbd</Text>
       </View>
     </TouchableOpacity>
   );
